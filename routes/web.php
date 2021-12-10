@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use EdvinasZel\crud\Greetr;
+
+Route::get('greet/{name}', function($sName) {
+    $oGreetr = new Greetr();
+    return $oGreetr->greet($sName);
+});
